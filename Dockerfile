@@ -6,7 +6,8 @@ RUN yum update -y
 
 # install utilities
 RUN yum install -y wget \
-    openssh-server
+    openssh-server \
+    openssh-clients
 
 # configure ssh
 RUN mkdir /var/run/sshd && \
