@@ -5,7 +5,7 @@ sipxcom docker image
 docker pull dizzy/sipxcom:15.04
 
 <h2>Run it as</h2>
-docker run -d -p 49160:22 -h sipxcom.local.test dizzy/sipxcom:15.04
+docker run -d -p 49160:22 --name sipxcom -h sipxcom.local.test dizzy/sipxcom:15.04
 
 <h4>SSH</h4>
 - ssh root@localhost -p 49160
