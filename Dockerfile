@@ -12,7 +12,8 @@ RUN yum install -y wget \
 # configure ssh
 RUN mkdir /var/run/sshd && \
     echo 'root:admin' | chpasswd && \
-    echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
+    sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd && \
     /usr/bin/ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key -C '' -N '' && \
     /usr/bin/ssh-keygen -q -t dsa -f /etc/ssh/ssh_host_dsa_key -C '' -N ''
 
