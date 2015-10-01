@@ -18,7 +18,7 @@ RUN mkdir /var/run/sshd && \
     /usr/bin/ssh-keygen -q -t dsa -f /etc/ssh/ssh_host_dsa_key -C '' -N ''
 
 # install sipxcom
-RUN wget -P /etc/yum.repos.d http://download.sipxcom.org/pub/15.04-unstable/sipxecs-15.04.0-centos.repo
+RUN wget -P /etc/yum.repos.d http://download.sipxcom.org/pub/15.10-unstable/sipxecs-15.10.0-centos.repo
 RUN yum install -y sipxecs
 
 EXPOSE 22
