@@ -19,6 +19,6 @@ RUN mkdir /var/run/sshd && \
 
 # install sipxcom
 RUN wget -P /etc/yum.repos.d http://download.sipxcom.org/pub/sipXecs/15.08/sipxecs-15.08.0-centos.repo
-RUN yum install -y sipxcom
+RUN yum install -y sipxecs
 
 ENTRYPOINT ["/bin/bash"]
