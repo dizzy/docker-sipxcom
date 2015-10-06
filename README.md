@@ -10,5 +10,5 @@ sudo docker run -ti -d --net=host --privileged --name sipxcom dizzy/sipxcom:late
 <h4>Attach session</h4>
 sudo docker exec -it sipxcom bash
 
-Run sipxecs-setup, and configure system
+Make sure sshd started (service sshd start) and /etc/resolv.conf points to your machine IP (TBD - do this automaticaly). Run sipxecs-setup, and configure system
 
